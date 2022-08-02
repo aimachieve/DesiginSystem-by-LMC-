@@ -1,0 +1,27 @@
+@forward '../../../packages/design-tokens/src/scss';
+
+@use '../../../packages/web/src/scss/foundation';
+@use '../../../packages/web/src/scss/helpers';
+@use '../../../packages/web/src/scss/utilities';
+
+@use '../../../packages/web/src/scss/components/Alert';
+@use '../../../packages/web/src/scss/components/Button';
+@use '../../../packages/web/src/scss/components/CheckboxField';
+@use '../../../packages/web/src/scss/components/Container';
+@use '../../../packages/web/src/scss/components/Grid';
+@use '../../../packages/web/src/scss/components/Header';
+@use '../../../packages/web/src/scss/components/Pill';
+@use '../../../packages/web/src/scss/components/Stack';
+@use '../../../packages/web/src/scss/components/Tabs';
+@use '../../../packages/web/src/scss/components/Tag';
+@use '../../../packages/web/src/scss/components/TextField';
+
+.example-box {
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #fff;
+    background: #0b1c21;
+    padding: 0.25rem;
+}

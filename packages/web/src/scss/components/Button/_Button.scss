@@ -1,0 +1,55 @@
+@use 'sass:map';
+@use 'theme';
+@use 'tools';
+@use '../../settings/cursors';
+@use '../../tools/typography';
+
+.Button {
+    @include typography.generate(theme.$typography);
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: theme.$padding-y theme.$padding-x;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: transparent;
+    border: theme.$border-width theme.$border-style transparent;
+    border-radius: theme.$border-radius;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+    &:disabled,
+    &.is-disabled,
+    &.Button--disabled {
+        cursor: cursors.$disabled;
+        pointer-events: none;
+    }
+}
+
+.Button__icon {
+    font-size: 1.5em;
+}
+
+.Button--square {
+    @include tools.square(theme.$breakpoints, theme.$typography, theme.$padding-y, theme.$border-width);
+
+    flex: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.Button--block {
+    display: block;
+    width: 100%;
+}
+
+@each $variant, $variables in theme.$variants {
+    @include tools.variant($variant, $variables);
+}

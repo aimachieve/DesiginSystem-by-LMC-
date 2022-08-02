@@ -1,0 +1,25 @@
+{
+  "name": "@lmc-eu/spirit-design-tokens",
+  "version": "0.19.0",
+  "description": "Design tokens for Spirit Design System",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/spirit-design-system.git",
+    "directory": "packages/design-tokens"
+  },
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist/scss && cp -r package.json README.md dist/ && cp -r src/scss/generated/* src/scss/@tokens.scss dist/scss/",
+    "lint": "stylelint --config ../../.stylelintrc.js ./src/**/*.scss",
+    "test": "yarn lint"
+  },
+  "devDependencies": {
+    "@lmc-eu/stylelint-config": "4.0.1",
+    "stylelint": "14.9.1",
+    "stylelint-order": "5.0.0"
+  }
+}
